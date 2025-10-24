@@ -1,0 +1,16 @@
+# Exported from Render on 2025-10-24T20:35:48Z
+version: "1"
+projects:
+- name: My project
+  environments:
+  - name: Production
+    services:
+    - type: web
+      name: express-hello-world
+      runtime: node
+      repo: https://github.com/render-examples/express-hello-world
+      plan: starter
+      region: oregon
+      buildCommand: yarn --frozen-lockfile install
+      startCommand: node app.js
+      autoDeployTrigger: commit
